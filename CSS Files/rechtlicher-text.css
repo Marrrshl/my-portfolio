@@ -1,0 +1,10 @@
+.rechtlicher-text p {
+    color: rgb(150, 150, 150);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.8rem;
+    text-align: center;
+    background-color: rgb(20, 20, 20);
+    z-index: 40;
+    position: relative;
+    padding: 3rem 4rem;
+}
