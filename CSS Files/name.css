@@ -63,3 +63,25 @@
     border-color: transparent;
   }
 }
+
+
+
+@media screen and (max-width: 600px) {
+  .my-name {
+    font-size: 3rem;
+  }
+  
+  .my-profession {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .my-name {
+    font-size: 2.5rem;
+  }
+  
+  .my-profession {
+    font-size: 1rem;
+  }
+}

@@ -31,12 +31,20 @@
     margin-bottom: 1rem;
 }
 
+.name-inputs-container input {
+    max-width: 400px;
+}
+
 .email-message-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
     margin-bottom: 1rem;
+}
+
+.email-message-container input, .message-textarea-container textarea {
+    max-width: 816px;
 }
 
 .message-textarea-container {
@@ -146,4 +154,32 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 /* keep Instagram gradient when hovering its SVG specifically */
 .contact-me-links-container .social-media-svg.instagram:hover path {
     fill: url(#instagram-gradient);
+}
+
+
+
+@media (max-width: 760px) {
+    .name-inputs-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .name-inputs-container input {
+        width: 80%;
+        max-width: none;
+    }
+
+    .email-message-container input, .message-textarea-container textarea {
+        width: 80%;
+    }
+
+    .send-message-button {
+        border: 2px solid rgb(70, 130, 180);
+    }
+}
+
+@media (max-width: 640px) {
+    .contact-me-links-container {
+        gap: 4rem;
+    }
 }

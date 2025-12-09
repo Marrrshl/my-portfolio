@@ -214,9 +214,7 @@
              assets, and visuals that feel alive. With solid experience across the 3D pipeline, 
              I love exploring new techniques and transforming concepts into 
              compelling digital content. I care a lot about details, stunning lighting 
-             and the kind of design that makes an image or video feel “right.” 
-             Whether I’m modeling, texturing or enhancing my skills by learning new skills, 
-             I enjoy the process just as much as the final result. 
+             and the kind of design that makes an image or video feel “right.”
              And I’m always looking for new challenges to grow and get better at what I do.
             
             <!--Es war einmal ein Pferd, das hieß Herr-Bert
@@ -361,6 +359,7 @@
       handleProjectHover('.project-1 img', 'Media/Chibi-Robo.jpg');
       handleProjectHover('.project-2 img', 'Media/BioShock.jpg');
       handleProjectHover('.project-3 img', 'Media/Mantaray.jpg');
+      handleProjectHover('.project-4 img', 'Media/Spaceship_thumbnail.jpg');
     </script>
 
     <script>
@@ -371,6 +370,33 @@
       hamMenu.addEventListener('click', () => {
         navBar.classList.toggle('active');
         hamMenu.classList.toggle('active');
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const images = document.querySelectorAll('.main-pieces img');
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            const img = entry.target;
+
+            // Add the entry animation once
+            if (entry.isIntersecting) {
+              img.classList.add("visible");
+            }
+
+            if (entry.isIntersecting) {
+              img.classList.add("active");
+            } else {
+              img.classList.remove("active");
+            }
+          });
+        }, {
+          threshold: 0.8  // image must be ~60% in the viewport to activate
+        });
+
+        images.forEach(img => observer.observe(img));
       });
     </script>
   </body>

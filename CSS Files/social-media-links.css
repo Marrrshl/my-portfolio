@@ -73,3 +73,10 @@
 .instagram:hover path{
   fill: url(#instagram-gradient);
 }
+
+
+@media (max-width: 768px) {
+  .social-media-links-container {
+    display: none;
+  }
+}
