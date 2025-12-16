@@ -1,0 +1,177 @@
+.about-me-section {
+  width: 100%;
+  background-color:  rgb(20, 20, 20);
+  position: relative;
+  z-index: 40;
+  display: flex;
+  flex: 1fr 1fr;
+  padding: 8rem 0;
+}
+
+.about-me-text-container {
+  width: 100%;
+  padding-left: 8rem;
+}
+
+.about-me-text-container h2 {
+  color: white;
+  font-size: 3rem;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-align: right;
+  padding-right: 3rem;
+}
+
+.about-me-text-container p {
+  color: white;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+  font-family: "JetBrains Mono", monospace;
+  padding-right: 3rem;
+  text-align: right;
+  max-width: 1000px;
+  margin-left: auto;
+}
+
+.about-me-text-container h3 {
+  color: white;
+  font-size: 2rem;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 500;
+  margin-top: 3.5rem;
+  margin-bottom: 1rem;
+  text-align: right;
+  padding-right: 3rem;
+}
+
+.software-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 3rem;
+  padding-right: 3rem;
+}
+
+.software-list li {
+  width: 64px;
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.software-list li img {
+  width: 100%;
+  height: auto;
+}
+
+.about-me-image-container {
+  width: 100%;
+}
+
+.about-me-image-container img {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.name-inputs-container input {
+  width: 20%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.email-message-container input {
+  width: 41%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.message-textarea-container textarea {
+  width: 41%;
+  height: 150px;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  resize: none;
+}
+
+.send-message-button {
+  padding: 0.8rem 2rem;
+  background-color: rgb(40, 40, 40);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+
+
+
+@media (max-width: 1200px) {
+  .about-me-section {
+    flex-direction: column;
+    padding: 4rem 0;
+  }
+
+  .about-me-text-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    text-align: center;
+  }
+
+  .about-me-text-container h2,
+  .about-me-text-container h3,
+  .about-me-text-container p {
+    text-align: center;
+    padding-right: 0;
+  }
+
+  .software-list {
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  .about-me-image-container {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+}
+
+@media (max-width: 465px) {
+  .software-list {
+    gap: 1rem;
+  }
+
+  .software-list li img {
+    width: 48px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-me-image-container img {
+    width: 80%;
+    height: auto;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
+
+@media (max-width: 385px) {
+  .software-list {
+    gap: 0;
+  }
+  
+  .software-list li img {
+    width: 46px;
+  }
+}

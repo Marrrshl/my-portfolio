@@ -1,0 +1,185 @@
+.contact-section {
+    height: 100%;
+    width: 100vw;
+    z-index: 40;
+    background-color:  rgb(20, 20, 20);
+    position: relative;
+}
+
+.contact-me-header {
+    color: white;
+    font-size: 3rem;
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 500;
+    margin: 0;
+    padding-top: 6rem;
+    text-align: center;
+}
+
+.contact-me-subheader {
+    color: white;
+    font-size: 1.2rem;
+    font-family: "JetBrains Mono", monospace;
+    margin: 1rem 0 2rem 0;
+    text-align: center;
+}
+
+.name-inputs-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.name-inputs-container input {
+    max-width: 400px;
+}
+
+.email-message-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.email-message-container input, .message-textarea-container textarea {
+    max-width: 816px;
+}
+
+.message-textarea-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+input[type="text"], input[type="email"], textarea {
+    background-color: rgb(36, 36, 36);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: "JetBrains Mono", monospace;
+}
+
+input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::placeholder {
+    color: rgb(150, 150, 150);
+}
+
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+    outline: 2px solid rgb(70, 130, 180);
+}
+
+.send-message-button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.send-message-button {
+    padding: 0.8rem 2rem;
+    background-color: rgb(40, 40, 40);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: "JetBrains Mono", monospace;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.send-message-button:hover {
+    background-color: rgb(70, 130, 180);
+}
+
+.contact-section ul {
+    list-style: none;
+    color: white;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1rem;
+    margin-top: 2rem;
+    text-align: center;
+    color: white;
+}
+
+.contact-section a[href^="mailto:"],
+.contact-section a[href^="tel:"] {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.contact-section a[href^="mailto:"]:hover,
+.contact-section a[href^="tel:"]:hover {
+    text-decoration: underline;
+    text-decoration-color: rgb(70, 130, 180);
+    text-decoration-thickness: 2px;
+}
+
+.contact-me-links-container {
+    display: flex;
+    justify-content: center;
+    gap: 8rem;
+}
+
+.contact-me-link {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    padding: 4px;
+    margin: 12px 2px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.contact-me-links-container .social-media-svg {
+    width: 48px;
+    height: 48px;
+    transition: 0.5s;
+}
+
+/* ensure default icon fill and enable hover color for paths */
+.contact-me-links-container .social-media-svg path {
+    fill: rgb(222, 222, 222);
+    transition: fill 0.3s ease;
+}
+
+/* change color when hovering the SVG element itself */
+.contact-me-links-container .social-media-svg:hover path {
+    fill: var(--accent-color);
+}
+
+/* keep Instagram gradient when hovering its SVG specifically */
+.contact-me-links-container .social-media-svg.instagram:hover path {
+    fill: url(#instagram-gradient);
+}
+
+
+
+@media (max-width: 760px) {
+    .name-inputs-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .name-inputs-container input {
+        width: 80%;
+        max-width: none;
+    }
+
+    .email-message-container input, .message-textarea-container textarea {
+        width: 80%;
+    }
+
+    .send-message-button {
+        border: 2px solid rgb(70, 130, 180);
+    }
+}
+
+@media (max-width: 640px) {
+    .contact-me-links-container {
+        gap: 4rem;
+    }
+}
