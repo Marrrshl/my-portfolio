@@ -68,7 +68,7 @@
 
 @media screen and (max-width: 600px) {
   .my-name {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   
   .my-profession {
@@ -78,7 +78,7 @@
 
 @media screen and (max-width: 400px) {
   .my-name {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
   
   .my-profession {

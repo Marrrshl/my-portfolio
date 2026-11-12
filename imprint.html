@@ -5,37 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Imprint - Marcel Regele Portfolio</title>
     <link rel="stylesheet" href="CSS Files/general.css" />
-    <link rel="stylesheet" href="CSS Files/ham-menu.css" />
     <link rel="stylesheet" href="CSS Files/imprint-and-privacy-policy.css" />
+    <link rel="stylesheet" href="Fonts/stylesheet.css" />
   </head>
-  <body>
-    <header>
-      <nav class="nav-bar">
+  <body class="legal-page">
+    <header class="site-header">
+      <nav class="nav-bar" aria-label="Main navigation">
         <ul class="nav-links">
-          <li><a href="index.html">Portfolio</a></li>
-          <li><a href="imprint.html">Imprint</a></li>
-          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="index.html">About</a></li>
+          <li><a href="imprint.html" aria-current="page">Imprint</a></li>
+          <li><a href="privacy-policy.html">Privacy</a></li>
         </ul>
       </nav>
-     <input id="burger-checkbox" type="checkbox" />
-      <label class="burger" for="burger-checkbox">
+      <input id="burger-checkbox" type="checkbox" aria-label="Toggle navigation">
+      <label class="burger" for="burger-checkbox" aria-hidden="true">
         <span></span>
         <span></span>
         <span></span>
       </label>
     </header>
 
-    <h2>Imprint / Impressum</h2>
-
-    <hr />
-
-    <div class="content-container">
-      <section class="imprint-section">
+    <main>
+      <header class="legal-heading">
+        <h1 class="legal-title">Imprint / Impressum<span class="legal-title-period">.</span></h1>
+      </header>
+      <div class="content-container">
+        <section class="imprint-section">
         <h3>Information according to § 5 TMG:</h3>
         <br />
         <p>Marcel Regele</p>
-        <p>Hirschgasse 11a</p>
-        <p>69120 Heidelberg</p>
+        <p>Am Eisweiher 33</p>
+        <p>77815 Bühl</p>
         <p>Germany</p>
         <br />
         <br />
@@ -56,17 +56,38 @@
         <p>The content and works created by me on this website are subject to German copyright law. Duplication, editing, distribution, or any kind of exploitation outside the limits of copyright requires my written consent.
           Downloads and copies of this site are permitted for private, non-commercial use only.
           If content on this website was not created by me, the copyrights of third parties are respected. Should you nevertheless become aware of a copyright infringement, please inform me. I will remove such content immediately.</p>
-      </section>
-    </div>
+        </section>
+      </div>
+      <footer class="site-footer">
+        <div class="footer-bottom">
+          <nav aria-label="Legal">
+            <a href="imprint.html" aria-current="page">Imprint</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+          </nav>
+          <p class="footer-notice">© 2026 Marcel Regele. Alle Rechte vorbehalten. Diese Website dient ausschließlich zur Präsentation von Projekten und Arbeiten von Marcel Regele. Keine Gewähr für Vollständigkeit, Richtigkeit oder Aktualität der dargestellten Inhalte.</p>
+        </div>
+      </footer>
+    </main>
 
     <script>
       // Hamburger Menu Toggle
-      const hamMenu = document.querySelector('.burger');
+      const menuToggle = document.querySelector('#burger-checkbox');
       const navBar = document.querySelector('.nav-bar');
+      const burger = document.querySelector('.burger');
 
-      hamMenu.addEventListener('click', () => {
-        navBar.classList.toggle('active');
-        hamMenu.classList.toggle('active');
+      menuToggle.addEventListener('change', () => {
+        navBar.classList.toggle('active', menuToggle.checked);
+        burger.classList.toggle('active', menuToggle.checked);
+        document.body.classList.toggle('menu-open', menuToggle.checked);
+      });
+
+      navBar.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          menuToggle.checked = false;
+          navBar.classList.remove('active');
+          burger.classList.remove('active');
+          document.body.classList.remove('menu-open');
+        });
       });
     </script>
   </body>

@@ -1,62 +1,121 @@
-body {
-    background-color: rgb(20, 20, 20);
+.legal-page {
+  min-height: 100vh;
+  background: var(--page);
 }
 
-body h2 {
-    color: #ffffff;
-    text-align: center;
-    margin: 2rem 0;
-    font-family: "JetBrains Mono", monospace;
-    font-size: 3rem;
+.legal-heading {
+  width: min(100%, 1120px);
+  margin: 0 auto;
+  padding: clamp(8rem, 17vh, 11rem) 2rem 2.5rem;
+  text-align: center;
+}
+
+.legal-title {
+  max-width: 1000px;
+  color: var(--paper);
+  font-family: var(--display);
+  font-size: clamp(2.8rem, 7vw, 5.6rem);
+  font-weight: 400;
+  letter-spacing: -0.06em;
+  line-height: 0.98;
+  text-align: center;
+}
+
+.privacy-title {
+  overflow-wrap: anywhere;
+}
+
+.privacy-title [lang="de"] {
+  hyphens: auto;
+}
+
+.legal-title-period {
+  color: var(--accent);
 }
 
 .content-container {
-    width: 100%;
-    height: 100vh;
+  width: min(100%, 1120px);
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
 }
 
 .imprint-section {
-    font-family: "JetBrains Mono", monospace;
-    padding: 2rem;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  max-width: 850px;
+  margin: 0 auto;
+  font-family: var(--body);
+  text-align: center;
 }
 
-.imprint-section p {
-    color: #aaaaaa;
-    margin-bottom: 1rem;
-    text-align: center;
-    padding: 0 5rem;
-    max-width: 1000px;
+.imprint-section > p,
+.imprint-section > ul {
+  margin: 0 0 1.15rem;
+  color: #bfc0c3;
+  font-size: 0.96rem;
+  line-height: 1.8;
+  text-align: center;
 }
 
-.imprint-section h3 {
-    color: #ffffff;
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-    text-align: center;
+.imprint-section > h3 {
+  margin: 2.6rem 0 0.85rem;
+  color: var(--paper);
+  font-family: var(--display);
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.imprint-section > h3:first-child,
+.imprint-section > p:first-child + h3 {
+  margin-top: 0;
 }
 
 .imprint-section a {
-    color: rgb(70, 130, 180);
-    text-decoration: none;
-    text-align: center;
-    display: block;
+  color: var(--accent);
+  text-decoration-color: rgba(255, 105, 79, 0.45);
+  text-underline-offset: 0.2em;
 }
 
-.imprint-section a:hover {
-    text-decoration: underline;
+.imprint-section a:hover,
+.imprint-section a:focus-visible {
+  text-decoration-thickness: 2px;
 }
 
 .imprint-section ul {
-    list-style-type: none;
-    padding-left: 0;
-    text-align: center;
+  display: inline-block;
+  padding-left: 1.25rem;
+  text-align: left;
 }
 
-.imprint-section ul li {
-    margin-bottom: 0.5rem;
-    color: #aaaaaa;
+.imprint-section li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.25rem;
+}
+
+.imprint-section li::marker {
+  color: var(--accent);
+}
+
+.imprint-section br {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .legal-heading {
+    padding: 7rem 1.4rem 2rem;
+  }
+
+  .content-container {
+    padding: 0 1.4rem 3rem;
+  }
+
+  .privacy-title {
+    font-size: clamp(2rem, 8vw, 2.6rem);
+  }
+
+  .imprint-section > p,
+  .imprint-section > ul {
+    font-size: 0.92rem;
+  }
 }
