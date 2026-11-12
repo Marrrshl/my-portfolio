@@ -15,6 +15,10 @@
   grid-area: portrait;
 }
 
+.about-me-image-container picture {
+  display: block;
+}
+
 .about-me-image-container img {
   display: block;
   width: 100%;

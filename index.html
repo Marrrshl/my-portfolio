@@ -33,6 +33,7 @@
     <main>
       <section class="front-page" aria-label="Introduction">
         <video class="background-video" autoplay muted loop playsinline>
+          <source src="Media/Spaceship_landing_v3.webm" type="video/webm">
           <source src="Media/Spaceship_landing_v3.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
@@ -87,8 +88,9 @@
             <h2 class="film-title">Short <span class="film-title-accent">Film</span></h2>
             <div class="film-frame" data-pending>
               <video controls playsinline preload="metadata" aria-label="Short film">
-                <source src="Media/short-film.mp4" type="video/mp4">
-                Your browser does not support HTML video. Add the short film at Media/short-film.mp4.
+                <source src="Media/Schrott_Roboter_Final.webm" type="video/webm">
+                <source src="Media/Schrott_Roboter_Final.mp4" type="video/mp4">
+                Your browser does not support HTML video.
               </video>
               <span class="video-placeholder" aria-hidden="true"></span>
             </div>
@@ -110,7 +112,11 @@
 
       <section class="about-me-section" id="about">
         <div class="about-me-image-container">
-          <img src="Media/me_cropped_v2.jpg" alt="Marcel Regele" loading="lazy">
+          <picture>
+            <source srcset="Media/me_cropped_v2.avif" type="image/avif">
+            <source srcset="Media/me_cropped_v2.webp" type="image/webp">
+            <img src="Media/me_cropped_v2.jpg" alt="Marcel Regele" loading="lazy">
+          </picture>
         </div>
         <div class="about-me-text-container">
           <h2>About Me</h2>
@@ -184,8 +190,17 @@
       });
 
       document.querySelectorAll('.film-frame video').forEach((video) => {
+        const frame = video.closest('.film-frame');
+        const alignFrameToVideo = () => {
+          if (video.videoWidth > 0 && video.videoHeight > 0) {
+            frame.style.aspectRatio = `${video.videoWidth} / ${video.videoHeight}`;
+          }
+        };
+
+        video.addEventListener('loadedmetadata', alignFrameToVideo);
+        alignFrameToVideo();
         video.addEventListener('loadeddata', () => {
-          video.closest('.film-frame').removeAttribute('data-pending');
+          frame.removeAttribute('data-pending');
         });
       });
     </script>
