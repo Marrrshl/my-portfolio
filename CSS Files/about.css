@@ -114,12 +114,28 @@
 }
 
 .about-contact-row {
+  display: block;
+  align-items: center;
+  gap: 0.9rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(236, 233, 227, 0.13);
+}
+
+#contact-me-header {
+  color: var(--paper);
+  font-family: var(--display);
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.about-contact-links {
   display: flex;
   align-items: center;
   gap: 0.9rem;
   margin-top: 1rem;
-  padding-top: 0.5rem;
-  border-top: 1px solid rgba(236, 233, 227, 0.13);
 }
 
 .about-email {
