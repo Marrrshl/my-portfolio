@@ -47,12 +47,18 @@
 }
 
 .imprint-section > p,
+.imprint-address > p,
 .imprint-section > ul {
   margin: 0 0 1.15rem;
   color: #bfc0c3;
   font-size: 0.96rem;
   line-height: 1.8;
   text-align: center;
+}
+
+.imprint-address > p {
+  margin-bottom: 0.2rem;
+  line-height: 1.4;
 }
 
 .imprint-section > h3 {
@@ -75,6 +81,8 @@
   color: var(--accent);
   text-decoration-color: rgba(255, 105, 79, 0.45);
   text-underline-offset: 0.2em;
+  margin-top: 0.8rem;
+  display: inline-block;
 }
 
 .imprint-section a:hover,
